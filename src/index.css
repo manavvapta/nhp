@@ -1,0 +1,53 @@
+/* ========================= */
+/* HIDE SCROLLBAR GLOBALLY */
+/* ========================= */
+
+html,
+body,
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE & Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none; /* Chrome, Safari */
+}
+
+/* OPTIONAL */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  background: #050505;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+.loader-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.bar {
+  width: 8px;
+  height: 32px;
+  border-radius: 999px;
+  background: #ff3b3b;
+}

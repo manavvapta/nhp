@@ -1,0 +1,722 @@
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+
+  background: #171354;
+  color: #f8f7f4;
+
+  display: flex;
+  align-items: center;
+
+  padding: 130px 6% 70px;
+  box-sizing: border-box;
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(110px);
+}
+
+.hero-glow-one {
+  width: 400px;
+  height: 400px;
+  top: -180px;
+  left: -150px;
+  background: rgba(247, 185, 156, 0.1);
+}
+
+.hero-glow-two {
+  width: 450px;
+  height: 450px;
+  right: -180px;
+  bottom: -200px;
+  background: rgba(247, 185, 156, 0.07);
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+
+  align-items: center;
+  gap: clamp(40px, 6vw, 90px);
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.hero-content {
+  width: 100%;
+  max-width: 650px;
+}
+
+/* =========================================
+   BADGE
+========================================= */
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 9px 15px;
+
+  border: 1px solid rgba(247, 185, 156, 0.3);
+  border-radius: 999px;
+
+  background: rgba(247, 185, 156, 0.06);
+
+  color: #f7b99c;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #f7b99c;
+
+  box-shadow: 0 0 12px rgba(247, 185, 156, 0.7);
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.hero h1 {
+  margin: 25px 0 0;
+
+  font-size: clamp(48px, 5vw, 76px);
+  line-height: 1.02;
+
+  letter-spacing: -3px;
+
+  font-weight: 700;
+}
+
+.hero h1 span {
+  display: block;
+  color: #f7b99c;
+}
+
+/* =========================================
+   TEXT
+========================================= */
+
+.hero-description {
+  max-width: 600px;
+
+  margin: 28px 0 0;
+
+  color: rgba(248, 247, 244, 0.78);
+
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.hero-description strong {
+  color: #f7b99c;
+}
+
+.hero-story {
+  max-width: 570px;
+
+  margin: 14px 0 0;
+
+  color: rgba(248, 247, 244, 0.52);
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 32px;
+}
+
+.hero-btn {
+  min-height: 52px;
+
+  padding: 0 23px;
+
+  border-radius: 999px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  border: 1px solid #f7b99c;
+
+  background: #f7b99c;
+  color: #171354;
+}
+
+.primary-btn span {
+  font-size: 17px;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(247, 185, 156, 0.2);
+}
+
+.secondary-btn {
+  border: 1px solid rgba(248, 247, 244, 0.25);
+
+  background: transparent;
+  color: #f8f7f4;
+}
+
+.secondary-btn:hover {
+  transform: translateY(-2px);
+
+  border-color: #f7b99c;
+  color: #f7b99c;
+}
+
+/* =========================================
+   VISUAL
+========================================= */
+
+.hero-visual {
+  position: relative;
+
+  width: 100%;
+  max-width: 620px;
+
+  margin-left: auto;
+}
+
+.hero-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 0.92 / 1;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(247, 185, 156, 0.2);
+
+  background: #0d0b35;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.25),
+    0 0 70px rgba(247, 185, 156, 0.05);
+}
+
+.hero-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(23, 19, 84, 0.05),
+    rgba(23, 19, 84, 0.25)
+  );
+
+  pointer-events: none;
+}
+
+/* =========================================
+   FLOATING CARDS
+========================================= */
+
+.floating-card {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 13px 15px;
+
+  border: 1px solid rgba(247, 185, 156, 0.25);
+  border-radius: 14px;
+
+  background: rgba(23, 19, 84, 0.78);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.22);
+
+  white-space: nowrap;
+
+  z-index: 5;
+}
+
+.floating-card strong {
+  display: block;
+
+  color: #f8f7f4;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.floating-card small {
+  display: block;
+
+  margin-top: 3px;
+
+  color: rgba(248, 247, 244, 0.48);
+
+  font-size: 8px;
+}
+
+.card-icon {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: rgba(247, 185, 156, 0.1);
+
+  color: #f7b99c;
+
+  font-size: 14px;
+}
+
+.card-one {
+  top: 12%;
+  left: -45px;
+}
+
+.card-two {
+  right: -35px;
+  bottom: 17%;
+}
+
+.card-three {
+  left: 12%;
+  bottom: -20px;
+
+  color: rgba(248, 247, 244, 0.75);
+
+  font-size: 10px;
+}
+
+.location-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #f7b99c;
+
+  box-shadow: 0 0 10px rgba(247, 185, 156, 0.7);
+}
+
+/* =========================================
+   SCROLL
+========================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  bottom: 22px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: rgba(248, 247, 244, 0.35);
+
+  font-size: 9px;
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+.scroll-indicator span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #f7b99c;
+}
+
+/* =========================================
+   LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .hero {
+    padding: 120px 5% 70px;
+  }
+
+  .hero-container {
+    gap: 45px;
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 6vw, 64px);
+  }
+
+  .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-image-wrapper {
+    border-radius: 24px;
+  }
+
+  .card-one {
+    left: -25px;
+  }
+
+  .card-two {
+    right: -20px;
+  }
+}
+
+/* =========================================
+   TABLET / MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+
+    padding: 105px 20px 70px;
+
+    align-items: flex-start;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+
+    max-width: 600px;
+  }
+
+  /* CONTENT */
+
+  .hero-content {
+    max-width: 100%;
+
+    text-align: center;
+  }
+
+  .hero-badge {
+    max-width: 100%;
+
+    padding: 8px 12px;
+
+    font-size: 8px;
+    letter-spacing: 0.7px;
+
+    white-space: nowrap;
+  }
+
+  .hero h1 {
+    margin-top: 22px;
+
+    font-size: clamp(38px, 10.5vw, 54px);
+
+    line-height: 1.04;
+
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    max-width: 500px;
+
+    margin: 21px auto 0;
+
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .hero-story {
+    max-width: 480px;
+
+    margin: 12px auto 0;
+
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  /* BUTTONS */
+
+  .hero-buttons {
+    width: 100%;
+
+    margin-top: 26px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+  }
+
+  .hero-btn {
+    width: 100%;
+
+    min-height: 50px;
+
+    padding: 0 12px;
+
+    font-size: 12px;
+  }
+
+  /* IMAGE */
+
+  .hero-visual {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0 auto;
+  }
+
+  .hero-image-wrapper {
+    width: 100%;
+
+    aspect-ratio: 1 / 1.05;
+
+    border-radius: 22px;
+  }
+
+  /* FLOATING CARDS */
+
+  .floating-card {
+    padding: 10px 12px;
+
+    gap: 8px;
+
+    border-radius: 12px;
+  }
+
+  .floating-card strong {
+    font-size: 9px;
+  }
+
+  .floating-card small {
+    font-size: 7px;
+  }
+
+  .card-icon {
+    width: 27px;
+    height: 27px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+  }
+
+  .card-one {
+    top: 8%;
+    left: -6px;
+  }
+
+  .card-two {
+    right: -6px;
+    bottom: 14%;
+  }
+
+  /* LOCATION CARD HIDE */
+
+  .card-three {
+    display: none;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 95px 16px 60px;
+  }
+
+  .hero-container {
+    gap: 35px;
+  }
+
+  .hero-badge {
+    max-width: calc(100vw - 32px);
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .hero-description {
+    font-size: 13.5px;
+  }
+
+  .hero-story {
+    font-size: 11.5px;
+  }
+
+  .hero-buttons {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 9px;
+
+    max-width: 330px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-btn {
+    min-height: 48px;
+
+    font-size: 12px;
+  }
+
+  .hero-visual {
+    max-width: 100%;
+  }
+
+  .hero-image-wrapper {
+    aspect-ratio: 0.9 / 1;
+
+    border-radius: 20px;
+  }
+
+  .floating-card {
+    padding: 9px 10px;
+  }
+
+  .floating-card strong {
+    font-size: 8px;
+  }
+
+  .floating-card small {
+    font-size: 6.5px;
+  }
+
+  .card-one {
+    left: -4px;
+  }
+
+  .card-two {
+    right: -4px;
+  }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+  .hero {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-description {
+    font-size: 12.5px;
+  }
+
+  .hero-story {
+    font-size: 11px;
+  }
+
+  .hero-image-wrapper {
+    border-radius: 18px;
+  }
+
+  .floating-card {
+    padding: 8px 9px;
+  }
+
+  .card-one {
+    left: -2px;
+  }
+
+  .card-two {
+    right: -2px;
+  }
+}

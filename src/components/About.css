@@ -1,0 +1,564 @@
+/* =========================================
+   ABOUT US - NATIONAL HARDWARE & PLYWOOD
+========================================= */
+
+.about-section {
+  position: relative;
+  width: 100%;
+  padding: 140px 6% 120px;
+  background: #140e6b;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/* =========================================
+   TOP FADE
+========================================= */
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+
+  background: linear-gradient(
+    to bottom,
+    #10101f 0%,
+    rgba(8, 8, 29, 0) 100%
+  );
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle background glow */
+
+.about-section::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: -250px;
+  top: 20%;
+  border-radius: 50%;
+
+  background: rgba(244, 176, 141, 0.045);
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.about-container {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1400px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  gap: 90px;
+}
+
+/* =========================================
+   IMAGES
+========================================= */
+
+.about-images {
+  position: relative;
+  width: 100%;
+  min-height: 590px;
+
+  opacity: 0;
+  transform: translateX(-60px);
+
+  animation: aboutImageReveal 1s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.about-main-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 78%;
+  height: 520px;
+
+  overflow: hidden;
+
+  border-radius: 5px;
+
+  border: 1px solid rgba(244, 176, 141, 0.2);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45),
+    0 0 50px rgba(23, 20, 91, 0.3);
+}
+
+.about-main-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(23, 20, 91, 0.12),
+    rgba(244, 176, 141, 0.04)
+  );
+
+  pointer-events: none;
+}
+
+.about-main-image img,
+.about-secondary-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.5s ease;
+}
+
+.about-main-image:hover img,
+.about-secondary-image:hover img {
+  transform: scale(1.06);
+}
+
+/* =========================================
+   SECOND IMAGE
+========================================= */
+
+.about-secondary-image {
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 48%;
+  height: 285px;
+
+  overflow: hidden;
+
+  border: 8px solid #08081d;
+  border-radius: 5px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(244, 176, 141, 0.08);
+}
+
+/* Peach border accent */
+
+.about-secondary-image::before {
+  content: "";
+
+  position: absolute;
+  top: -1px;
+  right: -1px;
+
+  width: 70px;
+  height: 70px;
+
+  border-top: 2px solid #f4b08d;
+  border-right: 2px solid #f4b08d;
+
+  z-index: 2;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.about-content {
+  max-width: 620px;
+
+  opacity: 0;
+  transform: translateX(60px);
+
+  animation: aboutContentReveal 1s ease forwards;
+  animation-delay: 0.35s;
+}
+
+.about-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 22px;
+
+  color: #f4b08d;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 4px;
+}
+
+.about-label::before {
+  content: "";
+
+  width: 35px;
+  height: 1px;
+
+  background: #f4b08d;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.about-content h2 {
+  margin: 0 0 28px;
+
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.02;
+
+  font-weight: 500;
+  letter-spacing: -2px;
+
+  color: #ffffff;
+}
+
+.about-content h2 span {
+  color: #f4b08d;
+
+  position: relative;
+}
+
+/* small glow */
+
+.about-content h2 span::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -5px;
+
+  width: 100%;
+  height: 1px;
+
+  background: #f4b08d;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  animation: underlineReveal 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+/* =========================================
+   PARAGRAPHS
+========================================= */
+
+.about-intro {
+  margin-bottom: 20px;
+
+  font-size: 20px;
+  line-height: 1.6;
+
+  color: #eeeeee;
+}
+
+.about-content p:not(.about-intro) {
+  margin-bottom: 18px;
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  color: #9c9cae;
+}
+
+/* =========================================
+   HIGHLIGHTS
+========================================= */
+
+.about-highlights {
+  display: flex;
+  gap: 45px;
+
+  margin: 38px 0;
+  padding: 25px 0;
+
+  border-top: 1px solid rgba(244, 176, 141, 0.18);
+  border-bottom: 1px solid rgba(244, 176, 141, 0.18);
+}
+
+.about-highlight {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.about-highlight strong {
+  font-size: 26px;
+  font-weight: 500;
+
+  color: #f4b08d;
+}
+
+.about-highlight span {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+
+  color: #77778b;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.about-button {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+
+  padding-bottom: 9px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  letter-spacing: 1px;
+
+  border-bottom: 1px solid #f4b08d;
+
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.about-button span {
+  color: #f4b08d;
+
+  font-size: 18px;
+
+  transition: transform 0.3s ease;
+}
+
+.about-button:hover {
+  color: #f4b08d;
+  gap: 23px;
+}
+
+.about-button:hover span {
+  transform: translate(4px, -4px);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes aboutImageReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes aboutContentReveal {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes underlineReveal {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .about-section {
+    padding: 110px 5% 90px;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 75px;
+  }
+
+  .about-images {
+    max-width: 750px;
+    margin: 0 auto;
+
+    min-height: 560px;
+  }
+
+  .about-main-image {
+    width: 78%;
+    height: 500px;
+  }
+
+  .about-secondary-image {
+    width: 45%;
+    height: 270px;
+  }
+
+  .about-content {
+    max-width: 750px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 90px 20px 70px;
+  }
+
+  .about-section::before {
+    height: 120px;
+  }
+
+  .about-container {
+    gap: 55px;
+  }
+
+  .about-images {
+    min-height: 430px;
+
+    transform: translateY(40px);
+  }
+
+  .about-main-image {
+    width: 82%;
+    height: 370px;
+  }
+
+  .about-secondary-image {
+    width: 48%;
+    height: 190px;
+
+    border-width: 5px;
+  }
+
+  .about-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .about-content h2 {
+    font-size: 42px;
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+
+    margin-bottom: 22px;
+  }
+
+  .about-intro {
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  .about-content p:not(.about-intro) {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .about-highlights {
+    gap: 18px;
+
+    justify-content: space-between;
+
+    margin: 30px 0;
+  }
+
+  .about-highlight strong {
+    font-size: 21px;
+  }
+
+  .about-highlight span {
+    font-size: 8px;
+    letter-spacing: 0.7px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .about-section {
+    padding: 70px 16px 60px;
+  }
+
+  .about-images {
+    min-height: 350px;
+  }
+
+  .about-main-image {
+    height: 310px;
+  }
+
+  .about-secondary-image {
+    height: 160px;
+  }
+
+  .about-content h2 {
+    font-size: 36px;
+  }
+
+  .about-highlights {
+    gap: 12px;
+  }
+}
+
+/* =========================================
+   REDUCE MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-images,
+  .about-content,
+  .about-content h2 span::after {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .about-main-image img,
+  .about-secondary-image img,
+  .about-button,
+  .about-button span {
+    transition: none;
+  }
+}
